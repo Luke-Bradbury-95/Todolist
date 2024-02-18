@@ -1,18 +1,26 @@
-﻿Console.WriteLine("Hello!");
+﻿using System.ComponentModel.Design;
+
+Console.WriteLine("Hello!");
 Console.WriteLine("[S]ee all TODOs");
 Console.WriteLine("[A]dd a TODO");
 Console.WriteLine("[R]emove a TODO");
 Console.WriteLine("[E]xit");
 
-string userInput = "A";
-Console.WriteLine(userInput);
+var userChoice = Console.ReadLine();
 
-userInput = "ABC";
-Console.WriteLine(userInput);
+if (userChoice.Length <= 3)
+{
+    Console.WriteLine("Long Answer");
+ }
+else if(userChoice.Length < 10)
+{
+    Console.WriteLine("Longer Answer");
+    }
+else
+{
+    Console.WriteLine("WAY TO LONG SIR");
+}
+Console.WriteLine("User Input:"+userChoice);
 
 
-int number;
-number = 8;
-Console.WriteLine(number);
-
-Console.ReadKey();
+Console.ReadKey(); 
