@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Runtime.Intrinsics.X86;
 using System.Xml;
 
 Console.WriteLine("Hello!");
@@ -11,19 +12,24 @@ var userChoice = Console.ReadLine();
 
 if (userChoice == "S")
 {
-    Console.WriteLine("Selected option: See all TODOs");
+    PrintSelectedOption("See all TODOs");
 }
 if (userChoice == "A")
 {
-    Console.WriteLine("Selected option: Add TODO");
+    PrintSelectedOption(" Add TODO");
 }
 if (userChoice == "R")
 {
-    Console.WriteLine("Selected option: Remove a TODO");
+    PrintSelectedOption(" Remove a TODO");
 }
 if (userChoice == "E")
 {
-    Console.WriteLine("Selected option: Exit Programme");
+    PrintSelectedOption("Exit Programme");
 }
 
 Console.ReadKey(); 
+
+void PrintSelectedOption (string selectedOption)
+{
+    Console.WriteLine("Selected option: " + selectedOption);
+}
