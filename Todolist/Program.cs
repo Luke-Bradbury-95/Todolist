@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Design;
+﻿using System.ComponentModel;
+using System.Xml;
 
 Console.WriteLine("Hello!");
 Console.WriteLine("[S]ee all TODOs");
@@ -8,20 +9,21 @@ Console.WriteLine("[E]xit");
 
 var userChoice = Console.ReadLine();
 
-if (userChoice.Length <= 3)
+if (userChoice == "S")
 {
-    Console.WriteLine("Long Answer");
- }
-else if(userChoice.Length < 10)
-{
-    Console.WriteLine("Longer Answer");
-    }
-else
-{
-    Console.WriteLine("WAY TO LONG SIR");
+    Console.WriteLine("Selected option: See all TODOs");
 }
-Console.WriteLine("User Input:"+userChoice); 
-
-
+if (userChoice == "A")
+{
+    Console.WriteLine("Selected option: Add TODO");
+}
+if (userChoice == "R")
+{
+    Console.WriteLine("Selected option: Remove a TODO");
+}
+if (userChoice == "E")
+{
+    Console.WriteLine("Selected option: Exit Programme");
+}
 
 Console.ReadKey(); 
