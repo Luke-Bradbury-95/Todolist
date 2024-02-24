@@ -15,10 +15,10 @@ while (!exit)
     Console.WriteLine("[E]xit");
 
     var userChoice = Console.ReadLine();
-    switch (userChoice)
+    switch (userChoice.ToUpper())
     {
         case "S":
-        case "s":
+        
             PrintSelectedOption("See all TODOs");
             if (list.Count == 0)
             {
@@ -33,7 +33,6 @@ while (!exit)
 
             break;
         case "A":
-        case "a":
             PrintSelectedOption("Add all TODOs");
             var input = Console.ReadLine();
             if (!string.IsNullOrEmpty(input)) // Making sure app doesnt crash if nothing is added
@@ -48,7 +47,6 @@ while (!exit)
             }
             break;
         case "R":
-        case "r":
             PrintSelectedOption("Remove a TODO");
             Console.WriteLine("Please enter the line number of the ToDo you wish to remove");
             if (int.TryParse(Console.ReadLine(), out int index))
@@ -66,8 +64,8 @@ while (!exit)
             }
             break;
         case "E":
-        case "e":
             PrintSelectedOption("Exit Programme");
+            exit = true;
             break;
         default:
             Console.WriteLine("Not quite right");
@@ -76,7 +74,6 @@ while (!exit)
 }
 
 
-            Console.ReadKey();
 
             void PrintSelectedOption(string selectedOption)
             {
